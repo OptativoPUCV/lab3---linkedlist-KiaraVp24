@@ -151,3 +151,9 @@ Tue 26 Mar 2024 07:45:27 PM UTC:
  tests:  7|2
 total_score: 45/70
 dd12e5f
+Tue 26 Mar 2024 07:47:24 PM UTC: 
+ list.c | 23 +++++++++++++++++++----
+ 1 file changed, 19 insertions(+), 4 deletions(-)
+ tests:  8|1
+total_score: 60/70
+e80cae7
