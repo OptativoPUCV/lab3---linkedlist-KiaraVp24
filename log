@@ -87,3 +87,35 @@ Tue 26 Mar 2024 07:27:59 PM UTC:
  tests:  5|4
 total_score: 25/70
 018b6ad
+Tue 26 Mar 2024 07:36:21 PM UTC: 
+ list.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+In file included from test.c:5:
+list.c: In function ‘pushFront’:
+list.c:71:3: error: unknown type name ‘node’; did you mean ‘Node’?
+   71 |   node* newNode = (node *)malloc(sizeof(node));
+      |   ^~~~
+      |   Node
+list.c:71:20: error: ‘node’ undeclared (first use in this function); did you mean ‘Node’?
+   71 |   node* newNode = (node *)malloc(sizeof(node));
+      |                    ^~~~
+      |                    Node
+list.c:71:20: note: each undeclared identifier is reported only once for each function it appears in
+list.c:71:26: error: expected expression before ‘)’ token
+   71 |   node* newNode = (node *)malloc(sizeof(node));
+      |                          ^
+list.c:72:10: error: request for member ‘data’ in something not a structure or union
+   72 |   newNode->data = data;
+      |          ^~
+list.c:73:10: error: request for member ‘next’ in something not a structure or union
+   73 |   newNode->next = list->head;
+      |          ^~
+list.c:74:20: error: assignment to ‘Node *’ from incompatible pointer type ‘int *’ [-Werror=incompatible-pointer-types]
+   74 |   list->head->prev = newNode;
+      |                    ^
+list.c:75:14: error: assignment to ‘Node *’ from incompatible pointer type ‘int *’ [-Werror=incompatible-pointer-types]
+   75 |   list->head = newNode;
+      |              ^
+cc1: all warnings being treated as errors
+Compilation failed
+8027161

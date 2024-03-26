@@ -52,9 +52,9 @@ void * nextList(List * list) {
         else {
           list->current = list->current->next;
           if (list->current) {
-              return list->current->data;
-            }
+            return list->current->data;
         }
+      }
     }
     return NULL;
 }
@@ -68,6 +68,11 @@ void * prevList(List * list) {
 }
 
 void pushFront(List * list, void * data) {
+  node* newNode = (node *)malloc(sizeof(node));
+  newNode->data = data;
+  newNode->next = list->head;
+  list->head->prev = newNode;
+  list->head = newNode;
 }
 
 void pushBack(List * list, void * data) {
